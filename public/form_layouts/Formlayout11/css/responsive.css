@@ -1,0 +1,574 @@
+/* Formlayout11 - Responsive Styles */
+/* All classes prefixed with fl11- to avoid conflicts */
+
+/* ================================
+   TABLET BREAKPOINT (1024px)
+   ================================ */
+@media (max-width: 1024px) {
+    .fl11-booking-container {
+        max-width: 100%;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .fl11-sidebar {
+        min-width: 240px;
+        max-width: 240px;
+        padding: 30px 20px;
+    }
+
+    .fl11-sidebar-header h2 {
+        font-size: 18px;
+    }
+
+    .fl11-sidebar-header h3 {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .fl11-step {
+        margin-bottom: 22px;
+    }
+
+    .fl11-step-label {
+        font-size: 14px;
+    }
+
+    .fl11-main-content {
+        padding: 25px 30px;
+    }
+
+    .fl11-content-header h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .fl11-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .fl11-time-slots {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fl11-content-body {
+        gap: 20px;
+    }
+
+    .fl11-summary-panel {
+        min-width: 180px;
+        max-width: 200px;
+        padding: 16px;
+    }
+
+    .fl11-button-group {
+        flex-direction: column-reverse;
+    }
+
+    .fl11-button-group .fl11-back-btn {
+        width: 100%;
+    }
+}
+
+/* ================================
+   MOBILE LANDSCAPE (768px)
+   ================================ */
+@media (max-width: 768px) {
+    .fl11-booking-container {
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 16px;
+        min-height: auto;
+    }
+
+    .fl11-sidebar {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 24px 20px;
+    }
+
+    .fl11-sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fl11-sidebar-header h2 {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .fl11-sidebar-header h3 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .fl11-steps {
+        display: flex;
+        overflow-x: auto;
+        gap: 0;
+        padding: 16px 0 0 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .fl11-step {
+        flex-direction: column;
+        margin-bottom: 0;
+        margin-right: 20px;
+        min-width: 70px;
+        text-align: center;
+    }
+
+    .fl11-step:not(:last-child)::after {
+        left: calc(50% + 20px);
+        top: 9px;
+        width: 20px;
+        height: 2px;
+    }
+
+    .fl11-step-indicator {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .fl11-step-label {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .fl11-main-content {
+        padding: 20px;
+    }
+
+    .fl11-content-header h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .fl11-content-body {
+        flex-direction: column;
+    }
+
+    .fl11-summary-panel {
+        min-width: 100%;
+        max-width: 100%;
+        order: -1;
+        margin-bottom: 16px;
+    }
+
+    .fl11-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .fl11-service-card {
+        padding: 16px 12px;
+    }
+
+    .fl11-card-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+
+    .fl11-card-title {
+        font-size: 13px;
+    }
+
+    .fl11-card-description {
+        font-size: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .fl11-card-checkbox {
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .fl11-time-slots {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .fl11-time-slot-label {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .fl11-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .fl11-form-group.fl11-half {
+        margin-bottom: 18px;
+    }
+
+    .fl11-user-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .fl11-user-tab {
+        padding: 10px 16px;
+        font-size: 13px;
+        flex: 1;
+        text-align: center;
+        min-width: calc(50% - 4px);
+    }
+
+    .fl11-continue-btn,
+    .fl11-back-btn {
+        padding: 16px 24px;
+        font-size: 15px;
+    }
+
+    .fl11-payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .fl11-success-content {
+        padding: 40px 20px;
+    }
+
+    .fl11-success-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .fl11-success-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fl11-success-content h1 {
+        font-size: 26px;
+    }
+
+    .fl11-success-content p {
+        font-size: 14px;
+    }
+}
+
+/* ================================
+   MOBILE PORTRAIT (480px)
+   ================================ */
+@media (max-width: 480px) {
+    .fl11-booking-container {
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .fl11-sidebar {
+        padding: 16px;
+    }
+
+    .fl11-sidebar-header h2 {
+        font-size: 14px;
+    }
+
+    .fl11-sidebar-header h3 {
+        font-size: 13px;
+    }
+
+    .fl11-steps {
+        padding-top: 12px;
+    }
+
+    .fl11-step {
+        min-width: 60px;
+        margin-right: 12px;
+    }
+
+    .fl11-step-indicator {
+        width: 18px;
+        height: 18px;
+    }
+
+    .fl11-step-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .fl11-step-label {
+        font-size: 10px;
+    }
+
+    .fl11-main-content {
+        padding: 16px;
+    }
+
+    .fl11-content-header h1 {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .fl11-services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .fl11-service-card {
+        padding: 14px 10px;
+        border-radius: 12px;
+    }
+
+    .fl11-card-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .fl11-card-title {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .fl11-card-description {
+        display: none;
+    }
+
+    .fl11-card-checkbox {
+        width: 18px;
+        height: 18px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .fl11-card-checkbox svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .fl11-select,
+    .fl11-input,
+    .fl11-textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .fl11-form-group label {
+        font-size: 12px;
+    }
+
+    .fl11-summary-panel {
+        padding: 14px;
+    }
+
+    .fl11-summary-header h4 {
+        font-size: 14px;
+    }
+
+    .fl11-summary-label {
+        font-size: 11px;
+    }
+
+    .fl11-summary-value {
+        font-size: 12px;
+    }
+
+    .fl11-summary-value.fl11-cost {
+        font-size: 16px;
+    }
+
+    .fl11-time-slots {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fl11-time-slot-label {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .fl11-user-tab {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .fl11-continue-btn,
+    .fl11-back-btn {
+        padding: 14px 20px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .fl11-file-label {
+        padding: 20px;
+    }
+
+    .fl11-file-label svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .fl11-file-label span {
+        font-size: 13px;
+    }
+
+    .fl11-payment-card {
+        padding: 14px 16px;
+    }
+
+    .fl11-payment-card svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .fl11-payment-card span {
+        font-size: 13px;
+    }
+
+    .fl11-success-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 24px;
+    }
+
+    .fl11-success-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .fl11-success-content h1 {
+        font-size: 22px;
+    }
+
+    .fl11-success-content p {
+        font-size: 13px;
+    }
+
+    .fl11-booking-details {
+        padding: 16px;
+    }
+
+    .fl11-booking-details p {
+        font-size: 13px;
+    }
+}
+
+/* ================================
+   LANDSCAPE MODE FIX
+   ================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .fl11-sidebar {
+        padding: 12px 16px;
+    }
+
+    .fl11-steps {
+        padding-top: 8px;
+    }
+
+    .fl11-step {
+        margin-right: 16px;
+    }
+
+    .fl11-main-content {
+        padding: 12px 16px;
+    }
+
+    .fl11-content-header h1 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .fl11-services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .fl11-service-card {
+        padding: 10px 8px;
+    }
+
+    .fl11-card-icon {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 6px;
+    }
+
+    .fl11-card-title {
+        font-size: 11px;
+    }
+
+    .fl11-card-description {
+        display: none;
+    }
+}
+
+/* ================================
+   HIGH DPI / RETINA DISPLAYS
+   ================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .fl11-service-card {
+        border-width: 1px;
+    }
+
+    .fl11-card-checkbox {
+        border-width: 1.5px;
+    }
+}
+
+/* ================================
+   PRINT STYLES
+   ================================ */
+@media print {
+    .fl11-booking-container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .fl11-sidebar {
+        background: #1a2a4a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .fl11-continue-btn,
+    .fl11-back-btn {
+        display: none;
+    }
+}
+
+/* ================================
+   REDUCED MOTION
+   ================================ */
+@media (prefers-reduced-motion: reduce) {
+    .fl11-service-card,
+    .fl11-continue-btn,
+    .fl11-step-indicator,
+    .fl11-step-dot,
+    .fl11-step-label,
+    .fl11-user-form {
+        transition: none;
+    }
+
+    .fl11-service-card:hover {
+        transform: none;
+    }
+
+    .fl11-continue-btn:hover {
+        transform: none;
+    }
+
+    @keyframes fl11FadeIn {
+        from { opacity: 1; transform: none; }
+        to { opacity: 1; transform: none; }
+    }
+
+    @keyframes fl11SlideIn {
+        from { opacity: 1; transform: none; }
+        to { opacity: 1; transform: none; }
+    }
+
+    @keyframes fl11SuccessPop {
+        from { transform: scale(1); }
+        to { transform: scale(1); }
+    }
+}
