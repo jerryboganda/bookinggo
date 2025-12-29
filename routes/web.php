@@ -71,10 +71,10 @@ Route::get('check-service-online-meeting-form-layout/{businessSlug}', [ServiceCo
 // Auth::routes();
 require __DIR__ . '/auth.php';
 
-Route::get('/register/{lang?}', [RegisteredUserController::class, 'create'])->name('register');
-Route::get('/login/{lang?}', [AuthenticatedSessionController::class, 'create'])->name('login');
-Route::get('/forgot-password/{lang?}', [PasswordResetLinkController::class, 'create'])->name('password.request');
-Route::get('/verify-email/{lang?}', [EmailVerificationPromptController::class, '__invoke'])->name('verification.notice');
+Route::get('/register/{lang?}', [RegisteredUserController::class, 'create'])->name('register.lang');
+Route::get('/login/{lang?}', [AuthenticatedSessionController::class, 'create'])->name('login.lang');
+Route::get('/forgot-password/{lang?}', [PasswordResetLinkController::class, 'create'])->name('password.request.lang');
+Route::get('/verify-email/{lang?}', [EmailVerificationPromptController::class, '__invoke'])->name('verification.notice.lang');
 
 // module page before login
 Route::get('add-on', [HomeController::class, 'Software'])->name('apps.software');
