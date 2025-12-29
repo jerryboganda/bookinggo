@@ -623,33 +623,12 @@ class AppointmentController extends Controller
                     }
                 }
 
-                // Handle guest user - create customer record if not exists
+                // Handle guest user - guests don't need customer records
+                // Their info will be stored directly in the appointment
                 $customer = null;
                 $customer_id = null;
                 
                 if ($request->type == 'guest-user') {
-                    // Check if guest customer already exists by email
-                    $existingCustomer = Customer::where('email', $request->email)
-                        ->where('business_id', $business->id)
-                        ->first();
-                    
-                    if ($existingCustomer) {
-                        // Use existing customer
-                        $customer = $existingCustomer;
-                        $customer_id = $customer->id;
-                    } else {
-                        // Create new customer record for guest
-                        $customer = new Customer();
-                        $customer->name = $request->name;
-                        $customer->email = $request->email;
-                        $customer->contact = $request->contact;
-                        $customer->user_id = null; // Guest has no user account
-                        $customer->business_id = $business->id;
-                        $customer->created_by = $business->created_by;
-                        $customer->save();
-                        $customer_id = $customer->id;
-                    }
-                    
                     // Create/Update contact entry for marketing purposes
                     $existingContact = \App\Models\ContactUs::where('email', $request->email)
                         ->where('business_id', $business->id)
