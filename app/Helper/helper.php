@@ -138,8 +138,8 @@ if (!function_exists('generateMenu')) {
 if (!function_exists('hasChildren')) {
     function hasChildren($menuItems, $name)
     {
-        $admin_settings = getAdminAllSetting();
-        if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 's3') {
+        foreach ($menuItems as $item) {
+            if (isset($item['parent']) && $item['parent'] === $name) {
                 return true;
             }
         }
@@ -152,7 +152,7 @@ if (!function_exists('getSettingMenu')) {
     function getSettingMenu()
     {
         $user = auth()->user();
-        } else if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 'wasabi') {
+        $role = $user->roles->first();
         $menu = new \App\Classes\Menu($user);
         if ($role->name == 'super admin') {
             event(new \App\Events\SuperAdminSettingMenuEvent($menu));
