@@ -66,7 +66,7 @@ Route::resource('subscribes', SubscribeController::class);
 Route::get('check-service-online-meeting/{businessSlug}', [ServiceController::class, 'checkServiceOnlineMeeting'])->name('check.service.online.meeting');
 
 // for checking online appointment for form layout
-Route::get('check-service-online-meeting-form-layout/{businessSlug}', [ServiceController::class, 'checkServiceOnlineMeetingFormLayout'])->name('check.service.online.meeting');
+Route::get('check-service-online-meeting-form-layout/{businessSlug}', [ServiceController::class, 'checkServiceOnlineMeetingFormLayout'])->name('check.service.online.meeting.form.layout');
 
 // Auth::routes();
 require __DIR__ . '/auth.php';
