@@ -640,10 +640,10 @@ class AppointmentController extends Controller
                             'name' => $request->name,
                             'email' => $request->email,
                             'contact' => $request->contact,
-                            'title' => 'Appointment Booking - Guest',
+                            'subject' => 'Appointment Booking - Guest',
                             'description' => 'Contact created from appointment booking',
+                            'theme' => 'default',
                             'business_id' => $business->id,
-                            'created_by' => $business->created_by,
                         ]);
                         
                         Log::info('Contact created from guest booking', [
