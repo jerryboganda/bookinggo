@@ -702,7 +702,6 @@ if (!function_exists('upload_file')) {
                     ];
                     return $res;
                 } else {
-                    $name = $name;
                     $save = Storage::disk($storage_settings['storage_setting'])->putFileAs(
                         $path,
                         $file,
@@ -934,7 +933,7 @@ if (!function_exists('get_base_file')) {
     function get_base_file($path)
     {
         $admin_settings = getAdminAllSetting();
-        if (isset($storage_settings['storage_setting']) && $storage_settings['storage_setting'] == 's3') {
+        if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 's3') {
             config(
                 [
                     'filesystems.disks.s3.key' => $admin_settings['s3_key'],
@@ -947,7 +946,7 @@ if (!function_exists('get_base_file')) {
             );
 
             return Storage::disk('s3')->url($path);
-        } else if (isset($storage_settings['storage_setting']) && $storage_settings['storage_setting'] == 'wasabi') {
+        } else if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 'wasabi') {
             config(
                 [
                     'filesystems.disks.wasabi.key' => $admin_settings['wasabi_key'],

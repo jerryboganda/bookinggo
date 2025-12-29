@@ -138,8 +138,8 @@ if (!function_exists('generateMenu')) {
 if (!function_exists('hasChildren')) {
     function hasChildren($menuItems, $name)
     {
-        foreach ($menuItems as $item) {
-            if ($item['parent'] === $name) {
+        $admin_settings = getAdminAllSetting();
+        if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 's3') {
                 return true;
             }
         }
@@ -152,7 +152,7 @@ if (!function_exists('getSettingMenu')) {
     function getSettingMenu()
     {
         $user = auth()->user();
-        $role = $user->roles->first();
+        } else if (isset($admin_settings['storage_setting']) && $admin_settings['storage_setting'] == 'wasabi') {
         $menu = new \App\Classes\Menu($user);
         if ($role->name == 'super admin') {
             event(new \App\Events\SuperAdminSettingMenuEvent($menu));
@@ -710,7 +710,6 @@ if (!function_exists('upload_file')) {
                     ];
                     return $res;
                 } else {
-                    $name = $name;
                     $save = Storage::disk($storage_settings['storage_setting'])->putFileAs(
                         $path,
                         $file,
