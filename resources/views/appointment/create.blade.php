@@ -55,7 +55,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 {{ Form::label('staff', __('Staff'), ['class' => 'form-label']) }}
-                {{ Form::select('staff', $staff, null, ['class' => 'form-control', 'required' => 'required', 'id' => 'staff']) }}
+                {{ Form::select('staff', $staff, null, ['class' => 'form-control', 'id' => 'staff']) }}
                 @permission('business update')
                     <div class=" text-xs mt-1">{{ __('Create staff here. ') }}
                         <a href="{{ route('manage.business') }}"><b>{{ __('Create staff') }}</b></a>

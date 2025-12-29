@@ -1485,7 +1485,7 @@ if (!function_exists('currency_format_with_sym')) {
             $company_settings = getCompanyAllSetting();
         }
         $symbol_position = 'pre';
-        $symbol = '$';
+        $symbol = '₨'; // Default to PKR symbol
         $format = '1';
         $currency_space = null;
         $number = explode('.', $price);

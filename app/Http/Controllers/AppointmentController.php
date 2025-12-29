@@ -93,7 +93,7 @@ class AppointmentController extends Controller
             $customer = Customer::where('created_by', creatorId())->where('business_id', getActiveBusiness())->get()->pluck('name', 'user_id')->prepend('select customer');
 
 
-            $staff = Staff::where('created_by', creatorId())->where('business_id', getActiveBusiness())->select('name', 'user_id')->get()->prepend(['user_id' => null, 'name' => 'Select Staff'])->pluck('name', 'user_id');
+            $staff = Staff::where('created_by', creatorId())->where('business_id', getActiveBusiness())->select('name', 'id')->get()->prepend(['id' => null, 'name' => 'Select Staff'])->pluck('name', 'id');
 
 
             $customer = Customer::where('created_by', creatorId())->where('business_id', getActiveBusiness())->select('name', 'user_id')->get()->prepend(['user_id' => null, 'name' => 'Select Customer'])->pluck('name', 'user_id');
@@ -139,7 +139,7 @@ class AppointmentController extends Controller
                     'customer' => 'required',
                     'location' => 'required',
                     'service' => 'required',
-                    'staff' => 'required',
+                    'staff' => 'nullable',
                     'appointment_date' => 'required',
                     'duration' => 'required',
                 ]
@@ -282,7 +282,7 @@ class AppointmentController extends Controller
                     // 'customer' => 'required',
                     'location' => 'required',
                     'service' => 'required',
-                    'staff' => 'required',
+                    'staff' => 'nullable',
                     'appointment_date' => 'required',
                     'duration' => 'required',
                 ]

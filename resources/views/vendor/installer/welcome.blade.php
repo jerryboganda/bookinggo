@@ -1,7 +1,7 @@
 @extends('vendor.installer.layouts.master')
 
 @section('template_title')
-        {{ __('BookingGo SaaS') }}
+        {{ __('AMAD Diagnostic Centre') }}
 @endsection
 
 @section('title')

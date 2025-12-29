@@ -7,7 +7,7 @@
 
 <head>
 
-    <title>@yield('page-title') | {{ !empty($admin_settings['title_text']) ? $admin_settings['title_text'] : 'BookingGo' }}
+    <title>@yield('page-title') | {{ !empty($admin_settings['title_text']) ? $admin_settings['title_text'] : 'AMAD Diagnostic Centre' }}
     </title>
 
     <meta name="title"
@@ -15,7 +15,7 @@
     <meta name="keywords"
         content="{{ !empty($admin_settings['meta_keywords']) ? $admin_settings['meta_keywords'] : 'Multi Business Appointment Booking and Scheduling' }}">
     <meta name="description"
-        content="{{ !empty($admin_settings['meta_description']) ? $admin_settings['meta_description'] : 'Discover the efficiency of BookingGo, a user-friendly web application by Workdo.' }}">
+        content="{{ !empty($admin_settings['meta_description']) ? $admin_settings['meta_description'] : 'AMAD Diagnostic Centre - Professional healthcare and diagnostic services in Gujranwala.' }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">

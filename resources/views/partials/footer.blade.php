@@ -7,7 +7,7 @@
                 @elseif(isset($admin_settings['footer_text']))
                     {{ $admin_settings['footer_text'] }}
                 @else
-                    {{ __('Copyright') }} &copy; {{ config('app.name', 'BookingGo') }}
+                    {{ __('Copyright') }} &copy; {{ config('app.name', 'AMAD Diagnostic Centre') }}
                 @endif
                 {{ date('Y') }}
             </span>

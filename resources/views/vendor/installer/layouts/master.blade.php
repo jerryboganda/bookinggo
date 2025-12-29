@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@if (trim($__env->yieldContent('template_title')))@yield('template_title') | @endif {{ __('BookingGo SaaS') }}</title>
+    <title>@if (trim($__env->yieldContent('template_title')))@yield('template_title') | @endif {{ __('AMAD Diagnostic Centre') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('installer/img/favicon/favicon.png') }}" sizes="32x32"/>
     <link href="{{ asset('installer/css/style.min.css') }}" rel="stylesheet"/>
     @yield('style')
