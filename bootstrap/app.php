@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\SetLang;
+use App\Http\Middleware\AllowIframeEmbedding;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         // Append middleware to the 'web' group
         $middleware->appendToGroup('web', SetLang::class);
+        $middleware->appendToGroup('web', AllowIframeEmbedding::class);
         // Exclude specific routes from CSRF protection
         $middleware->validateCsrfTokens(
             except: ['plan-get-paytm-status',
