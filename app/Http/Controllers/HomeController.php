@@ -240,7 +240,11 @@ class HomeController extends Controller
                 $weekStartDay = isset($weekStartDay) ? $weekStartDay : '0';
 
                 $company_settings = getCompanyAllSetting();
-                $today_appointments = Appointment::where('date',today()->format('d-m-Y'))->where('business_id', getActiveBusiness())->where('created_by', creatorId())->get();
+                $today_appointments = Appointment::with(['user', 'StaffData.user'])
+                    ->where('date',today()->format('d-m-Y'))
+                    ->where('business_id', getActiveBusiness())
+                    ->where('created_by', creatorId())
+                    ->get();
 
                 $compact = ['total_appointment', 'revenue', 'business', 'total_pending_appointment', 'chartData', 'staffs', 'weekStartDay', 'appointments', 'staff_id','company_settings','today_appointments'];
                 return view('appointment-dashboard', compact($compact));
