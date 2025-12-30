@@ -49,6 +49,11 @@ class Appointment extends Model
         return $this->hasOne(Customer::class, 'user_id', 'customer_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'customer_id', 'id');
+    }
+
     public function StaffData()
     {
         return $this->hasOne(Staff::class, 'user_id', 'staff_id');
