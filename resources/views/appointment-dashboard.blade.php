@@ -199,13 +199,13 @@
                                                         class="appointment-client-info  d-flex flex-wrap align-items-center gap-2 mb-3 justify-content-center">
                                                         <div class="appointment-client-image">
                                                             <img
-                                                                src="{{ check_file($today_appointment->StaffData->user->avatar) ? get_file($today_appointment->StaffData->user->avatar) : get_file('uploads/default/avatar.png') }}">
+                                                                src="{{ (!empty($today_appointment->StaffData) && !empty($today_appointment->StaffData->user) && check_file($today_appointment->StaffData->user->avatar)) ? get_file($today_appointment->StaffData->user->avatar) : get_file('uploads/default/avatar.png') }}">
                                                         </div>
                                                         <div class="appointment-client-content">
                                                             <h6>{{ !empty($today_appointment->StaffData) ? $today_appointment->StaffData->name : '-' }}
                                                             </h6>
                                                             <a
-                                                                href="#">{{ !empty($today_appointment->StaffData) ? $today_appointment->StaffData->user->email : '-' }}</a>
+                                                                href="#">{{ (!empty($today_appointment->StaffData) && !empty($today_appointment->StaffData->user)) ? $today_appointment->StaffData->user->email : '-' }}</a>
                                                         </div>
                                                     </div>
                                                     <div
